@@ -23,7 +23,7 @@ Let $n_u$ and $n_v$ be the number of control points along each parameter, with $
         - Let $r_i(t)$ be a B-spline curve fit to the points $\mathbf{P}_{\mathbf{C}_i}$ with a uniform knot vector containing $4 + n_u$ knots
         - Let `cpts[i]` be the control points of $r_i$ to `cpts`
     - Let $\bar{S}$ be the surfaced formed by `cpts`
-3. (TODO) Optimize control points
+3. Optimize control points
     - Let $x$ denote the control points, then want to find an update $\Delta x$ to the control points that brings $\bar{S}$ closer to the point cloud
     - For each point $p_i \in \mathbf{P}$, find the closest point $s_i \in \mathbb{R}^3$ on $\bar{S}$ with parameters $\bar{p}_i = (u_i, v_i) \in \mathbb{R}^2$ such that $\bar{S}(\bar{p}_i) = p_i$
         - Use Newton's method to minimize $\|\bar{S}(u, v) - p_i\|_2$
