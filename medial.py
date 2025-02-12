@@ -4,9 +4,9 @@ import networkx as nx
 import numpy as np
 
 
-def compute_medial_axis(points, p0, p1):
+def compute_medial_axis(points, p0, p1, r_thresh=np.inf):
     qhull = Delaunay(points)
-    xyz_centers, edge_lst = compute_voronoi_vertices_and_edges(qhull)
+    xyz_centers, edge_lst = compute_voronoi_vertices_and_edges(qhull, r_thresh)
 
     kdt = cKDTree(xyz_centers)
     _, idx0 = kdt.query(p0)
